@@ -73,10 +73,11 @@ environments {
     development {
         grails.logging.jul.usebridge = true
         grails.config.locations = ["file:${userHome}/.grails/trippler-config.groovy"]
+		grails.config.locations = ["file:/var/opt/trippler/trippler-config.groovy"]
     }
     production {
         grails.logging.jul.usebridge = false
-        grails.config.locations = ["file:/var/opt/betgame/trippler-config.groovy"]
+        grails.config.locations = ["file:/var/opt/trippler/trippler-config.groovy"]
     }
 }
 
@@ -104,7 +105,7 @@ log4j = {
 					'de.tp.DatabaseMessageSource'
 
 			debug   'grails.app',
-					'de.mf'
+					'de.tp'
 
 			error   'grails.app.service.org.grails.plugin.resource',
 					'grails.app.taglib.org.grails.plugin.resource',
@@ -126,7 +127,7 @@ log4j = {
 					'grails.app.resourceMappers.org.grails.plugin.resource'
 
 			debug   'grails.app',
-					'de.mf'
+					'de.tp'
 		}
 
 		development {
@@ -143,7 +144,7 @@ log4j = {
 					'grails.app.resourceMappers.org.grails.plugin.resource'
 
 			debug   'grails.app',
-					'de.mf'
+					'de.tp'
 			root { info 'stdout'}
 		}
 	}
