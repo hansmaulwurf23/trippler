@@ -1,0 +1,42 @@
+.sortable {
+	margin: 20px 0;
+	margin-bottom: 5px;
+}
+
+.sortable li {
+	list-style-type: none;
+	padding: 0.4em 0.4em 0.4em 0.4em;
+	cursor: pointer;
+}
+
+.sortable span.ui-icon {
+	position: absolute;
+	margin-left: -1.3em;
+}
+
+input[type="radio"] {
+	margin-right: 0.4em;
+}
+
+input.timepicker {
+	width: 40px;
+	margin-right: 10px;
+}
+
+input.waitingtime {
+	width: 30px;
+	margin-right: 10px;
+}
+
+.night {
+	background: #55555C; 
+}
+
+.night.dusk, .night.dusk span.distanceinfo {
+	color: #FF9933;
+}
+
+.night.dawn, .night.dawn span.distanceinfo {
+	color: #1C94C4;
+}
+

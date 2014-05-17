@@ -1,0 +1,2045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="DataSource" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://theviewfromtheafternoon.com:5432/tripplaner</property>
+            <property name="odaUser">arv</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">U2xvbjRlLC4=</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Tage" id="9">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">day_id</property>
+                    <text-property name="displayName">day_id</text-property>
+                    <text-property name="heading">day_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">datum</property>
+                    <text-property name="displayName">datum</text-property>
+                    <text-property name="heading">datum</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">taginfo</property>
+                    <text-property name="displayName">taginfo</text-property>
+                    <text-property name="heading">taginfo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">booked</property>
+                    <text-property name="displayName">booked</text-property>
+                    <text-property name="heading">booked</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">paid</property>
+                    <text-property name="displayName">paid</text-property>
+                    <text-property name="heading">paid</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">discount</property>
+                    <text-property name="displayName">discount</text-property>
+                    <text-property name="heading">discount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">hotel</property>
+                    <text-property name="displayName">hotel</text-property>
+                    <text-property name="heading">hotel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">hotelinfo</property>
+                    <text-property name="displayName">hotelinfo</text-property>
+                    <text-property name="heading">hotelinfo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">hotelnotes</property>
+                    <text-property name="displayName">hotelnotes</text-property>
+                    <text-property name="heading">hotelnotes</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">roominfo</property>
+                    <text-property name="displayName">roominfo</text-property>
+                    <text-property name="heading">roominfo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">preis</property>
+                    <text-property name="displayName">preis</text-property>
+                    <text-property name="heading">preis</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">priceusd</property>
+                    <text-property name="displayName">priceusd</text-property>
+                    <text-property name="heading">priceusd</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">link</property>
+                    <text-property name="displayName">link</text-property>
+                    <text-property name="heading">link</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cancel_contact</property>
+                    <text-property name="displayName">cancel_contact</text-property>
+                    <text-property name="heading">cancel_contact</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cancel_date</property>
+                    <text-property name="displayName">cancel_date</text-property>
+                    <text-property name="heading">cancel_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">breakfast</property>
+                    <text-property name="displayName">breakfast</text-property>
+                    <text-property name="heading">breakfast</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wifi</property>
+                    <text-property name="displayName">wifi</text-property>
+                    <text-property name="heading">wifi</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">parking</property>
+                    <text-property name="displayName">parking</text-property>
+                    <text-property name="heading">parking</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">hoteladdress</property>
+                    <text-property name="displayName">hoteladdress</text-property>
+                    <text-property name="heading">hoteladdress</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">longitude</property>
+                    <text-property name="displayName">longitude</text-property>
+                    <text-property name="heading">longitude</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">latitude</property>
+                    <text-property name="displayName">latitude</text-property>
+                    <text-property name="heading">latitude</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">day_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">datum</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">taginfo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">booked</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">paid</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">discount</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">hotel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">hotelinfo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">hotelnotes</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">roominfo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">preis</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">priceusd</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">link</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">cancel_contact</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">cancel_date</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">breakfast</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">wifi</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">parking</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">hoteladdress</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">longitude</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">latitude</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">DataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">day_id</property>
+                    <property name="nativeName">day_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">datum</property>
+                    <property name="nativeName">datum</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">taginfo</property>
+                    <property name="nativeName">taginfo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">booked</property>
+                    <property name="nativeName">booked</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-7</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">paid</property>
+                    <property name="nativeName">paid</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-7</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">discount</property>
+                    <property name="nativeName">discount</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">hotel</property>
+                    <property name="nativeName">hotel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">hotelinfo</property>
+                    <property name="nativeName">hotelinfo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">hotelnotes</property>
+                    <property name="nativeName">hotelnotes</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">roominfo</property>
+                    <property name="nativeName">roominfo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">preis</property>
+                    <property name="nativeName">preis</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">priceusd</property>
+                    <property name="nativeName">priceusd</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">link</property>
+                    <property name="nativeName">link</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">cancel_contact</property>
+                    <property name="nativeName">cancel_contact</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">cancel_date</property>
+                    <property name="nativeName">cancel_date</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">breakfast</property>
+                    <property name="nativeName">breakfast</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-7</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">wifi</property>
+                    <property name="nativeName">wifi</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-7</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">parking</property>
+                    <property name="nativeName">parking</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-7</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">hoteladdress</property>
+                    <property name="nativeName">hoteladdress</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">longitude</property>
+                    <property name="nativeName">longitude</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">latitude</property>
+                    <property name="nativeName">latitude</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select day_id, d.day as datum, d.description as taginfo, 
+       n.booked, n.paid, n.discount, 
+       a.name as hotel, a.description as hotelinfo, a.notes as hotelnotes, a.roominfo, 
+       a.price as preis, a.priceusd, a.link, 
+       a.cancel_contact, a.cancel_date,
+       a.breakfast, a.wifi, a.parking,
+       aa.street || ', ' || aa.zip || ' ' || aa.city || ' (' || aa.state || ')' as hoteladdress, 
+       aa.longitude, aa.latitude
+from day d 
+	join night n on d.day::date = n.midnight - interval '1 day'
+	left outer join accomodation a using (accomodation_id)
+	left outer join address aa using (address_id)
+order by d.day;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>day_id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>day_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>day_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>datum</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>datum</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>datum</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>taginfo</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>taginfo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>taginfo</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>booked</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-7</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>booked</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>booked</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>paid</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-7</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>paid</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>paid</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>discount</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>discount</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>discount</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>hotel</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>hotel</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>hotel</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>hotelinfo</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>hotelinfo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>hotelinfo</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>hotelnotes</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>hotelnotes</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>hotelnotes</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>roominfo</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>roominfo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>roominfo</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>preis</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>preis</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>preis</design:label>
+            <design:formattingHints>
+              <design:displaySize>24</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>priceusd</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>priceusd</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>priceusd</design:label>
+            <design:formattingHints>
+              <design:displaySize>24</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>link</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>link</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>link</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cancel_contact</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>cancel_contact</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cancel_contact</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cancel_date</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>cancel_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cancel_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>breakfast</design:name>
+              <design:position>16</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-7</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>breakfast</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>breakfast</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>wifi</design:name>
+              <design:position>17</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-7</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>wifi</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>wifi</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>parking</design:name>
+              <design:position>18</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-7</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>parking</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>parking</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>hoteladdress</design:name>
+              <design:position>19</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>hoteladdress</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>hoteladdress</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>longitude</design:name>
+              <design:position>20</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>longitude</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>longitude</design:label>
+            <design:formattingHints>
+              <design:displaySize>24</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>latitude</design:name>
+              <design:position>21</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>latitude</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>latitude</design:label>
+            <design:formattingHints>
+              <design:displaySize>24</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Etappen" id="325">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">day_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">day_id</text-property>
+                    <text-property name="heading">day_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">distance</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">distance</text-property>
+                    <text-property name="heading">distance</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">stay_seconds</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">stay_seconds</text-property>
+                    <text-property name="heading">stay_seconds</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">etappenname</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">etappenname</text-property>
+                    <text-property name="heading">etappenname</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">etappeninfo</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">etappeninfo</text-property>
+                    <text-property name="heading">etappeninfo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">time</text-property>
+                    <text-property name="heading">time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">etapaddress</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">etapaddress</text-property>
+                    <text-property name="heading">etapaddress</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">longitude</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">longitude</text-property>
+                    <text-property name="heading">longitude</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">latitude</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">latitude</text-property>
+                    <text-property name="heading">latitude</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">isstage</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">isstage</text-property>
+                    <text-property name="heading">isstage</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">etapdayid</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-5</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">day_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">distance</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">stay_seconds</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">etappenname</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">etappeninfo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">etapaddress</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">longitude</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">latitude</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">isstage</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">DataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">day_id</property>
+                    <property name="nativeName">day_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">distance</property>
+                    <property name="nativeName">distance</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">stay_seconds</property>
+                    <property name="nativeName">stay_seconds</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">etappenname</property>
+                    <property name="nativeName">etappenname</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">etappeninfo</property>
+                    <property name="nativeName">etappeninfo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">time</property>
+                    <property name="nativeName">time</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">etapaddress</property>
+                    <property name="nativeName">etapaddress</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">longitude</property>
+                    <property name="nativeName">longitude</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">latitude</property>
+                    <property name="nativeName">latitude</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">isstage</property>
+                    <property name="nativeName">isstage</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-7</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select s.day_id, distance, stay_seconds, s.name as etappenname, s.notes as etappeninfo, s.time,
+       a.street || ', ' || a.zip || ' ' || a.city as etapaddress,
+       a.longitude, a.latitude, isstage
+from (select true as isstage, day_id, distance, stay_seconds, name, notes, time, address_id from stage
+           UNION ALL
+      select false as isstage, d.day_id, n.distance, n.duration, acc.name, null, time , acc.address_id
+	from night n join accomodation acc using (accomodation_id) join day d on d.day::date = n.midnight - interval '1 day'
+     ) as s
+     left outer join address a using (address_id)
+where day_id = ?
+order by s.time]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>day_id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>day_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>day_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>distance</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>distance</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>distance</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>stay_seconds</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>stay_seconds</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>stay_seconds</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>etappenname</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>etappenname</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>etappenname</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>etappeninfo</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>etappeninfo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>etappeninfo</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>time</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>time</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>time</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>etapaddress</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>etapaddress</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>etapaddress</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>longitude</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>longitude</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>longitude</design:label>
+            <design:formattingHints>
+              <design:displaySize>24</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>latitude</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>latitude</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>latitude</design:label>
+            <design:formattingHints>
+              <design:displaySize>24</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <grid id="421">
+                    <property name="width">7.84375in</property>
+                    <column id="422">
+                        <property name="width">7.270833333333333in</property>
+                    </column>
+                    <column id="423">
+                        <property name="width">0.16666666666666666in</property>
+                    </column>
+                    <column id="424">
+                        <property name="width">0.40625in</property>
+                    </column>
+                    <row id="425">
+                        <cell id="426">
+                            <auto-text id="427">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="428">
+                            <text id="429">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="430">
+                            <auto-text id="431">
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="206">
+            <property name="fontSize">12pt</property>
+            <property name="dataSet">Tage</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">day_id</property>
+                    <text-property name="displayName">day_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["day_id"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">datum</property>
+                    <text-property name="displayName">datum</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["datum"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">taginfo</property>
+                    <text-property name="displayName">taginfo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["taginfo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">booked</property>
+                    <text-property name="displayName">booked</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["booked"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">paid</property>
+                    <text-property name="displayName">paid</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["paid"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">discount</property>
+                    <text-property name="displayName">discount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["discount"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">hotel</property>
+                    <text-property name="displayName">hotel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["hotel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">hotelinfo</property>
+                    <text-property name="displayName">hotelinfo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["hotelinfo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">hotelnotes</property>
+                    <text-property name="displayName">hotelnotes</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["hotelnotes"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">roominfo</property>
+                    <text-property name="displayName">roominfo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["roominfo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">preis</property>
+                    <text-property name="displayName">preis</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["preis"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">priceusd</property>
+                    <text-property name="displayName">priceusd</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["priceusd"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">link</property>
+                    <text-property name="displayName">link</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["link"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">cancel_contact</property>
+                    <text-property name="displayName">cancel_contact</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cancel_contact"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">cancel_date</property>
+                    <text-property name="displayName">cancel_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cancel_date"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">breakfast</property>
+                    <text-property name="displayName">breakfast</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["breakfast"] == 1 ? "Ja" : "Nein"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">wifi</property>
+                    <text-property name="displayName">wifi</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["wifi"] == 1 ? "Ja" : "Nein"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">parking</property>
+                    <text-property name="displayName">parking</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["parking"] == 1 ? "Ja" : "Nein"</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">hoteladdress</property>
+                    <text-property name="displayName">hoteladdress</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["hoteladdress"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">longitude</property>
+                    <text-property name="displayName">longitude</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["longitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">latitude</property>
+                    <text-property name="displayName">latitude</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["latitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+            </list-property>
+            <column id="213"/>
+            <header>
+                <row id="207">
+                    <cell id="208"/>
+                </row>
+            </header>
+            <group id="246">
+                <property name="groupName">Tag</property>
+                <expression name="keyExpr" type="javascript">row["day_id"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["day_id"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">always-excluding-last</property>
+                <header>
+                    <row id="247">
+                        <cell id="248">
+                            <property name="paddingTop">3pt</property>
+                            <property name="paddingLeft">3pt</property>
+                            <property name="paddingBottom">3pt</property>
+                            <property name="paddingRight">3pt</property>
+                            <grid id="214">
+                                <property name="pageBreakAfter">always</property>
+                                <property name="width">7.875in</property>
+                                <column id="215">
+                                    <property name="width">5.822916666666667in</property>
+                                </column>
+                                <column id="216">
+                                    <property name="width">2.0520833333333335in</property>
+                                </column>
+                                <row id="217">
+                                    <cell id="218">
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="paddingLeft">0pt</property>
+                                        <property name="paddingBottom">0pt</property>
+                                        <property name="paddingRight">0pt</property>
+                                        <data id="221">
+                                            <property name="backgroundColor">#BFBFBF</property>
+                                            <property name="fontSize">14pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="paddingTop">3pt</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="paddingBottom">3pt</property>
+                                            <property name="resultSetColumn">taginfo</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="219">
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="paddingLeft">0pt</property>
+                                        <property name="paddingBottom">0pt</property>
+                                        <property name="paddingRight">0pt</property>
+                                        <data id="220">
+                                            <property name="backgroundColor">#000000</property>
+                                            <property name="fontSize">14pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="color">#FFFFFF</property>
+                                            <property name="paddingTop">3pt</property>
+                                            <property name="paddingLeft">1pt</property>
+                                            <property name="paddingBottom">3pt</property>
+                                            <property name="paddingRight">5pt</property>
+                                            <structure name="dateTimeFormat">
+                                                <property name="category">Custom</property>
+                                                <property name="pattern">E dd.MM.yyyy HH:mm</property>
+                                                <property name="locale">de_DE</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">datum</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </header>
+                <footer>
+                    <row id="249">
+                        <cell id="250"/>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="209">
+                    <cell id="210">
+                        <grid id="252">
+                            <property name="width">7.875in</property>
+                            <column id="253">
+                                <property name="width">5.802083333333333in</property>
+                            </column>
+                            <column id="254">
+                                <property name="width">2.0729166666666665in</property>
+                            </column>
+                            <row id="255">
+                                <cell id="256">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <data id="270">
+                                        <property name="fontSize">12pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="resultSetColumn">hotel</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="409">
+                                <cell id="410">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="paddingBottom">1pt</property>
+                                    <data id="277">
+                                        <property name="resultSetColumn">hoteladdress</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="278">
+                                <list-property name="visibility"/>
+                                <cell id="279">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="paddingBottom">1pt</property>
+                                    <text id="413">
+                                        <property name="fontFamily">monospace</property>
+                                        <property name="contentType">html</property>
+                                        <text-property name="content"><![CDATA[Lat: <VALUE-OF format="###0.0000000{RoundingMode=HALF_UP}">row["latitude"]</VALUE-OF> Lon: <VALUE-OF format="###0.0000000{RoundingMode=HALF_UP}">row["longitude"]</VALUE-OF> ]]></text-property>
+                                    </text>
+                                </cell>
+                            </row>
+                            <row id="418">
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">row["link"] == null</expression>
+                                    </structure>
+                                </list-property>
+                                <cell id="419">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="paddingBottom">10pt</property>
+                                    <data id="417">
+                                        <property name="fontSize">12pt</property>
+                                        <property name="whiteSpace">nowrap</property>
+                                        <property name="resultSetColumn">link</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="302">
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">row["hotelinfo"] == null</expression>
+                                    </structure>
+                                </list-property>
+                                <cell id="303">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <data id="272">
+                                        <property name="resultSetColumn">hotelinfo</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="305">
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">row["hotelnotes"] == null</expression>
+                                    </structure>
+                                </list-property>
+                                <cell id="306">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <data id="273">
+                                        <property name="resultSetColumn">hotelnotes</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="308">
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">row["roominfo"] == null</expression>
+                                    </structure>
+                                </list-property>
+                                <cell id="309">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <data id="274">
+                                        <property name="paddingBottom">6pt</property>
+                                        <property name="resultSetColumn">roominfo</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="261">
+                                <cell id="262">
+                                    <grid id="311">
+                                        <column id="312"/>
+                                        <row id="313">
+                                            <cell id="314">
+                                                <text id="320">
+                                                    <property name="contentType">html</property>
+                                                    <text-property name="content"><![CDATA[Gebucht: <VALUE-OF>row["booked"] == 1 ? "Ja" : "Nein"</VALUE-OF>, Bezahlt: <VALUE-OF>row["paid"] == 1 ? "Ja" : "Nein"</VALUE-OF><B><VALUE-OF>row["discount"] != null ? ", Discount: " + row["discount"] : ""</VALUE-OF></B>]]></text-property>
+                                                </text>
+                                            </cell>
+                                        </row>
+                                        <row id="315">
+                                            <cell id="316">
+                                                <text id="321">
+                                                    <property name="contentType">html</property>
+                                                    <text-property name="content"><![CDATA[Preis: <VALUE-OF>row["preis"]</VALUE-OF> € bzw. <VALUE-OF>row["priceusd"]</VALUE-OF> US$]]></text-property>
+                                                </text>
+                                            </cell>
+                                        </row>
+                                        <row id="317">
+                                            <cell id="318">
+                                                <text id="301">
+                                                    <property name="contentType">html</property>
+                                                    <text-property name="content"><![CDATA[Stornierung: <STRONG><VALUE-OF format="dd.MM.yyyy HH:mm">row["cancel_date"]</VALUE-OF></STRONG> unter <STRONG><VALUE-OF>row["cancel_contact"]</VALUE-OF></STRONG>]]></text-property>
+                                                </text>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                                <cell id="263">
+                                    <grid id="282">
+                                        <property name="width">2.8125in</property>
+                                        <column id="297">
+                                            <property name="width">1.1041666666666667in</property>
+                                        </column>
+                                        <column id="283">
+                                            <property name="width">1.7083333333333333in</property>
+                                        </column>
+                                        <row id="284">
+                                            <cell id="294">
+                                                <label id="298">
+                                                    <text-property name="text">WiFi</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="285">
+                                                <data id="290">
+                                                    <structure name="numberFormat">
+                                                        <property name="category">Custom</property>
+                                                    </structure>
+                                                    <property name="resultSetColumn">wifi</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                        <row id="286">
+                                            <cell id="295">
+                                                <label id="299">
+                                                    <text-property name="text">Parken</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="287">
+                                                <data id="291">
+                                                    <property name="resultSetColumn">parking</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                        <row id="288">
+                                            <cell id="296">
+                                                <label id="300">
+                                                    <text-property name="text">Frühstück</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="289">
+                                                <data id="292">
+                                                    <property name="resultSetColumn">breakfast</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="326">
+                    <cell id="327">
+                        <property name="paddingTop">15pt</property>
+                        <table id="352">
+                            <property name="width">7.875in</property>
+                            <property name="dataSet">Etappen</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr" type="javascript">row["Aggregation"] &lt; 1</expression>
+                                </structure>
+                            </list-property>
+                            <list-property name="paramBindings">
+                                <structure>
+                                    <property name="paramName">etapdayid</property>
+                                    <simple-property-list name="expression">
+                                        <value type="javascript">row["day_id"]</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">day_id</property>
+                                    <text-property name="displayName">day_id</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["day_id"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">distance</property>
+                                    <text-property name="displayName">distance</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["distance"] &lt; 1000 ? (dataSetRow["distance"] + "m") : (Math.round(dataSetRow["distance"]/1000) + "km")</expression>
+                                    <property name="dataType">string</property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">stay_seconds</property>
+                                    <text-property name="displayName">stay_seconds</text-property>
+                                    <expression name="expression" type="javascript">var hrs = Math.floor(dataSetRow["stay_seconds"]/3600);
+var rest = dataSetRow["stay_seconds"] - (3600 * hrs);
+var mnts = Math.round(rest/60);
+displayString = hrs + ":" + (mnts &lt; 10 ? "0" :  "") + mnts;</expression>
+                                    <property name="dataType">string</property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">etappenname</property>
+                                    <text-property name="displayName">etappenname</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["etappenname"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">etappeninfo</property>
+                                    <text-property name="displayName">etappeninfo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["etappeninfo"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">time</property>
+                                    <text-property name="displayName">time</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["time"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">etapaddress</property>
+                                    <text-property name="displayName">etapaddress</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["etapaddress"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">longitude</property>
+                                    <text-property name="displayName">longitude</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["longitude"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">latitude</property>
+                                    <text-property name="displayName">latitude</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["latitude"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Aggregation</property>
+                                    <text-property name="displayName">EtapRowCount</text-property>
+                                    <property name="dataType">integer</property>
+                                    <property name="aggregateFunction">COUNT</property>
+                                    <list-property name="arguments">
+                                        <structure>
+                                            <property name="name">Expression</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                            </list-property>
+                            <column id="368">
+                                <property name="width">0.9791666666666666in</property>
+                            </column>
+                            <column id="369">
+                                <property name="width">4.802083333333333in</property>
+                            </column>
+                            <column id="371">
+                                <property name="width">2.0833333333333335in</property>
+                            </column>
+                            <header>
+                                <row id="353">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <cell id="354">
+                                        <property name="paddingTop">1pt</property>
+                                        <label id="397">
+                                            <property name="borderRightColor">#000000</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingTop">3pt</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="paddingBottom">3pt</property>
+                                            <property name="paddingRight">0pt</property>
+                                            <property name="textAlign">left</property>
+                                            <text-property name="text">Zeit / Entf.</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="355">
+                                        <label id="398">
+                                            <property name="borderRightColor">#000000</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="paddingTop">3pt</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="paddingBottom">3pt</property>
+                                            <property name="paddingRight">0pt</property>
+                                            <property name="textAlign">left</property>
+                                            <text-property name="text">Etappe</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="357">
+                                        <label id="408">
+                                            <property name="paddingTop">3pt</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="paddingBottom">3pt</property>
+                                            <property name="paddingRight">0pt</property>
+                                            <property name="textAlign">right</property>
+                                            <text-property name="text">Dauer / GPS</text-property>
+                                        </label>
+                                    </cell>
+                                </row>
+                            </header>
+                            <detail>
+                                <row id="358">
+                                    <list-property name="highlightRules">
+                                        <structure>
+                                            <property name="operator">eq</property>
+                                            <property name="backgroundColor">#E5E5E5</property>
+                                            <expression name="testExpr" type="javascript">row[0] % 2</expression>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">0</value>
+                                            </simple-property-list>
+                                        </structure>
+                                    </list-property>
+                                    <cell id="359">
+                                        <data id="379">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <structure name="dateTimeFormat">
+                                                <property name="category">Short Time</property>
+                                                <property name="pattern">Short Time</property>
+                                                <property name="locale">de_DE</property>
+                                            </structure>
+                                            <property name="resultSetColumn">time</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="360">
+                                        <data id="391">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="resultSetColumn">etappenname</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="362">
+                                        <data id="395">
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">stay_seconds</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                                <row id="380">
+                                    <list-property name="highlightRules">
+                                        <structure>
+                                            <property name="operator">eq</property>
+                                            <property name="backgroundColor">#E5E5E5</property>
+                                            <expression name="testExpr" type="javascript">row[0] % 2</expression>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">0</value>
+                                            </simple-property-list>
+                                        </structure>
+                                    </list-property>
+                                    <cell id="381">
+                                        <data id="396">
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="resultSetColumn">distance</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="382">
+                                        <data id="392">
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="resultSetColumn">etapaddress</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="384">
+                                        <text id="403">
+                                            <property name="fontFamily">monospace</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[Lat: <VALUE-OF format="###0.0000000{RoundingMode=HALF_UP}">row["latitude"]</VALUE-OF>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                                <row id="399">
+                                    <list-property name="highlightRules">
+                                        <structure>
+                                            <property name="operator">eq</property>
+                                            <property name="backgroundColor">#E5E5E5</property>
+                                            <expression name="testExpr" type="javascript">row[0] % 2</expression>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">0</value>
+                                            </simple-property-list>
+                                        </structure>
+                                    </list-property>
+                                    <cell id="400">
+                                        <property name="colSpan">1</property>
+                                        <property name="rowSpan">1</property>
+                                    </cell>
+                                    <cell id="406">
+                                        <data id="407">
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="resultSetColumn">etappeninfo</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="402">
+                                        <text id="404">
+                                            <property name="fontFamily">monospace</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[Lon: <VALUE-OF format="###0.0000000{RoundingMode=HALF_UP}">row["longitude"]</VALUE-OF>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                            </detail>
+                            <footer>
+                                <row id="363">
+                                    <cell id="364"/>
+                                    <cell id="365"/>
+                                    <cell id="367"/>
+                                </row>
+                            </footer>
+                        </table>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="211">
+                    <cell id="212"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

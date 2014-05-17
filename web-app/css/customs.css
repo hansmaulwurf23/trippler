@@ -1,0 +1,104 @@
+.weekdaybox {
+	color: #FFFFFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    margin: 0 0.1em;
+    padding: 0.25em 0.7em;
+}
+
+a.nounderline {
+	text-decoration: none;
+}
+
+/* SPECIALS FOR THE DAY LIST */
+tr.dayrow {
+	overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
+	box-shadow: 0px 2px 5px #888888;
+}
+
+tr.dayrow td {
+	height: 26px;
+}
+
+tr.accorow, tr.stagerow {
+	font-size: 0.9em;
+	line-height: 1.0em;
+}
+
+tr.accorow:hover.even, tr.stagerow:hover.even {
+	background: #FFF;
+}
+
+tr.accorow:hover.odd, tr.stagerow:hover.odd {
+	background: #F7F7F7;
+}
+
+tr.accorow.dawn {
+	border-top: thin solid;
+}
+
+tr.accorow.dusk {
+	border-bottom: thin solid;
+}
+
+tr.accorow > td, tr.stagerow > td {
+	padding-bottom: 3px;
+	padding-top: 3px;
+	color: #555;
+}
+
+tr.accorow  a, tr.stagerow  a {
+	text-decoration: none;
+	color: #555;
+}
+
+tr.accorow  a:hover, tr.stagerow  a:hover {
+	text-decoration: underline;
+	color: #48802C;
+}
+
+tr.dayrow a.edit, tr.dayrow a.managestages {
+	min-width: 22px;
+	text-decoration: none;
+	color: #CCC;
+}
+
+tr.dayrow a.edit:hover, tr.dayrow a.managestages:hover {
+	color: #333;
+}
+/* END */
+
+.weektd {
+	text-align: right;
+	padding-right: 3px;
+	padding-left: 6px !important;
+}
+
+.weekcolorbox {
+	max-width: 10px;
+	min-width: 10px;
+	width: 10px;
+}
+
+.weekcolor_0 {
+	background-color: #ABBF78;
+}
+
+.weekcolor_4 {
+	background-color: #6699FF;
+}
+
+.weekcolor_2 {
+	background-color: #FFFFCC;
+}
+
+.weekcolor_3 {
+	background-color: #FF9933;
+}
+
+.weekcolor_5 {
+	background-color: #FF3300;
+}
+
+.weekcolor_1 {
+	background-color: #996633;
+}
