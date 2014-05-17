@@ -37,4 +37,15 @@ class NightController {
 		
 		[nightInstanceList: Night.list(params), nightInstanceTotal: Night.count()]
 	}
+	
+	def bla() {
+		Date d = new Date(114, 7, 19, 0, 0)
+		(1..32).each {
+			Night day = new Night()
+			day.midnight = d
+			day.save()
+			d = (d + 1)
+		}
+		redirect(action:'list')
+	}
 }
