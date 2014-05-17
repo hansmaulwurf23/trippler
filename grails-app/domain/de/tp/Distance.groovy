@@ -4,7 +4,7 @@ class Distance {
 	
 	Address source
 	Address destination
-	long distance
+	Long distance
 	Long duration
 
     static constraints = {
