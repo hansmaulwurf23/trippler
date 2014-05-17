@@ -1,4 +1,4 @@
-<%@ page import="de.mf.tp.Accomodation" %>
+<%@ page import="de.tp.Accomodation" %>
 
 <r:require modules="jquery-ui, datePickers" />
 

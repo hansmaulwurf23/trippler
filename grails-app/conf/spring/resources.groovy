@@ -6,7 +6,7 @@ beans = {
 	  Locale.setDefault(Locale.GERMAN)
    }
    
-   messageSource(de.mf.tp.DatabaseMessageSource) {
+   messageSource(de.tp.DatabaseMessageSource) {
 	   basenames = "WEB-INF/grails-app/i18n/messages"
 	   cacheSeconds = 10
 	   fallbackToSystemLocale = false

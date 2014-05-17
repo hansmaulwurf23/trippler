@@ -1,5 +1,5 @@
 
-<%@ page import="de.mf.tp.Address"%>
+<%@ page import="de.tp.Address"%>
 <!doctype html>
 <html>
 <head>

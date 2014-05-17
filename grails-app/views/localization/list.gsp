@@ -1,4 +1,4 @@
-<%@ page import="de.mf.tp.Localization" %>
+<%@ page import="de.tp.Localization" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -16,7 +16,7 @@
             <g:if test="${flash.message}">
             <div class="message"><g:message code="${flash.message}" args="${flash.args}" default="${flash.defaultMessage}" /></div>
             </g:if>
-            <filterpane:currentCriteria domainBean="de.mf.tp.Localization" dateFormat="${[title:'MM/dd/yyyy',releaseDate:'MMM dd, yyyy']}"
+            <filterpane:currentCriteria domainBean="de.tp.Localization" dateFormat="${[title:'MM/dd/yyyy',releaseDate:'MMM dd, yyyy']}"
                 removeImgDir="images/skin" removeImgFile="sweeper.png" />
             <div class="list">
                 <table>
@@ -45,7 +45,7 @@
                 <filterpane:isFiltered>Filter Applied!</filterpane:isFiltered>
             </div>
         <p>
-        <filterpane:filterPane domain="de.mf.tp.Localization" />
+        <filterpane:filterPane domain="de.tp.Localization" />
         </p>
         </div>
     </body>

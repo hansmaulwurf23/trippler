@@ -1,5 +1,5 @@
 
-<%@ page import="de.mf.tp.Day" %>
+<%@ page import="de.tp.Day" %>
 <!DOCTYPE html>
 <html>
 	<head>

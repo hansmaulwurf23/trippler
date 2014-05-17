@@ -1,5 +1,5 @@
 
-<%@ page import="de.mf.tp.sec.User" %>
+<%@ page import="de.tp.sec.User" %>
 <!DOCTYPE html>
 <html>
 	<head>

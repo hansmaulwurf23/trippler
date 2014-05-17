@@ -1,6 +1,6 @@
-import de.mf.tp.sec.Role
-import de.mf.tp.sec.User
-import de.mf.tp.sec.UserRole
+import de.tp.sec.Role
+import de.tp.sec.User
+import de.tp.sec.UserRole
 
 class BootStrap {
 

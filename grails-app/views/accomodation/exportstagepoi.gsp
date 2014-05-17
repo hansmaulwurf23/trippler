@@ -1,5 +1,5 @@
 
-<%@ page import="de.mf.tp.Accomodation" %>
+<%@ page import="de.tp.Accomodation" %>
 <!DOCTYPE html>
 <html>
 	<head>

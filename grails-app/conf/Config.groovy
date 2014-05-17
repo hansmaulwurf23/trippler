@@ -67,7 +67,7 @@ grails.gorm.default.constraints = {
 	'*'(nullable: true)
 }
 
-de.mf.tp.defaultDateFormat="dd.MM.yyyy"
+de.tp.defaultDateFormat="dd.MM.yyyy"
 
 environments {
     development {
@@ -101,7 +101,7 @@ log4j = {
 			}
 
 			warn    'org.mortbay.log',
-					'de.mf.tp.DatabaseMessageSource'
+					'de.tp.DatabaseMessageSource'
 
 			debug   'grails.app',
 					'de.mf'
@@ -136,7 +136,7 @@ log4j = {
 			}
 
 			warn    'org.mortbay.log',
-					'de.mf.tp.DatabaseMessageSource'
+					'de.tp.DatabaseMessageSource'
 
 			error   'grails.app.service.org.grails.plugin.resource',
 					'grails.app.taglib.org.grails.plugin.resource',
@@ -150,6 +150,6 @@ log4j = {
 }
 
 // Added by the Spring Security Core plugin:
-grails.plugins.springsecurity.userLookup.userDomainClassName = 'de.mf.tp.sec.User'
-grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'de.mf.tp.sec.UserRole'
-grails.plugins.springsecurity.authority.className = 'de.mf.tp.sec.Role'
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'de.tp.sec.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'de.tp.sec.UserRole'
+grails.plugins.springsecurity.authority.className = 'de.tp.sec.Role'
