@@ -39,10 +39,10 @@
 	    var iconBase = 'http://maps.google.com/mapfiles/kml/shapes/';
 	    <g:each in="${stages}" var="a" status="i">
 		var marker = new google.maps.Marker({
-		      position: new google.maps.LatLng(${a.address.latitude}, ${a.address.longitude}),
+		      position: new google.maps.LatLng(${a?.address?.latitude?:0}, ${a?.address?.longitude?:0}),
 		      map: map,
 		      animation: google.maps.Animation.DROP,
-		      title:"${a.toString()}: ${a.name}",
+		      title:"${a?.toString()?:''}: ${a?.name?:''}",
 		      icon: iconBase + 'placemark_circle.png'
 		      //shadow: iconBase + 'arrowshadow.png'
 		  });
@@ -50,11 +50,11 @@
 	    
 	    <g:each in="${accoAddresses}" var="a" status="i">
 		var marker = new google.maps.Marker({
-		      position: new google.maps.LatLng(${a.accomodation.address.latitude}, ${a.accomodation.address.longitude}),
+		      position: new google.maps.LatLng(${a?.accomodation?.address?.latitude?:0}, ${a?.accomodation?.address?.longitude?:0}),
 		      map: map,
 		      animation: google.maps.Animation.DROP,
-		      title:"${a.toString()}: ${a.accomodation.name} (${a.accomodation.price})",
-		      icon: pinImages[${(a.midnight.format('w') as Long) % 6}],
+		      title:"${a?.toString()?:''}: ${a?.accomodation?.name?:''} (${a?.accomodation?.price?:''})",
+		      icon: pinImages[${((a?.midnight?.format('w')?:0) as Long) % 6}],
 		      shadow: pinShadow
 		  });
 		 </g:each>

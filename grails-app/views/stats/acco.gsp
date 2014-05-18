@@ -11,7 +11,7 @@
 	    	google.setOnLoadCallback(drawChart);
 	    	function drawChart() {
 	    		var data;
-	    		var avgPrice = ${accoCost*.price.sum() / accoCost.count{ it }};
+	    		var avgPrice = ${accoCost?(accoCost*.price.sum() / accoCost.count{ it }):0};
 	    		data = new google.visualization.DataTable();
 		        data.addColumn('date', 'Night');
 		        data.addColumn('number', 'Price');
@@ -37,7 +37,7 @@
 				        height: 200, 
 				        chartArea : { left : 40, top : 10, width : "87%", height : "75%"},
 				        hAxis : {
-					        gridlines : { count: ${accoCost[-1].night.format('w').toLong() - accoCost[0].night.format('w').toLong()} },
+					        gridlines : { count: ${(accoCost?.size() >=2)?(accoCost[-1].night.format('w').toLong() - accoCost[0].night.format('w').toLong()):0} },
 					        minorGridlines : { count : 6 }
 				        }
 		        };
@@ -72,9 +72,9 @@
 		<table>
 			<tbody>
 				<tr>
-					<td>Min: ${minNight.price} €</td>
-					<td>Avg: ${(accoCost*.price.sum() / accoCost.count{ it }).toDouble().round(2)} €</td>
-					<td>Max: ${maxNight.price} €</td>
+					<td>Min: ${minNight?.price?:0} €</td>
+					<td>Avg: ${accoCost?((accoCost*.price.sum() / accoCost.count{ it }).toDouble().round(2)):0} €</td>
+					<td>Max: ${maxNight?.price?:0} €</td>
 				</tr>
 			</tbody>
 		</table>
