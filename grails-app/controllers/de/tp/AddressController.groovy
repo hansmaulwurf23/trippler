@@ -34,7 +34,7 @@ class AddressController {
 		
 		def addressInstance = new Address(newAddr)
 		
-		if (isDuplicate(addressInstance)) {
+		if (Address.find(addressInstance)) {
 			flash.message = message(code: 'address.duplicate.error')
 			render(view: "create", model: [addressInstance: addressInstance])
 			return
@@ -174,10 +174,10 @@ class AddressController {
 	}
 	
 	def calcCenter(addresses) {
-		def latMin = addresses*.latitude.min { it }
-		def latMax = addresses*.latitude.max { it }
-		def lonMin = addresses*.longitude.min { it }
-		def lonMax = addresses*.longitude.max { it }
+		def latMin = addresses*.latitude.min { it }?:0
+		def latMax = addresses*.latitude.max { it }?:0
+		def lonMin = addresses*.longitude.min { it }?:0
+		def lonMax = addresses*.longitude.max { it }?:0
 		
 		println "${latMin} ${latMax} ${lonMin} ${lonMax}"
 		

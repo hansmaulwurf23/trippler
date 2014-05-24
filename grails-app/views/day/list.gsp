@@ -11,8 +11,8 @@
 		
 		<r:script>
 			$(document).ready(function() {
-				$('tr.dayrow').click(function() {
-					var dayid = $(this).attr('dayid');
+				$('td.dayDescription').click(function() {
+					var dayid = $(this).parent().attr('dayid');
 					$('tr.accorow[dayid='+dayid+']').toggleClass('hidden');
 					$('tr.stagerow[dayid='+dayid+']').toggleClass('hidden');
 				});	
@@ -26,6 +26,13 @@
 				});
 			});
 		</r:script>
+		
+		<style>
+			.dayDescription:hover {
+				cursor: pointer;
+			}
+		</style>
+		
 	</head>
 	<body>
 		<a href="#list-day" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -67,7 +74,7 @@
 							</g:link>
 						</td>
 						<td style="text-align: center;">${dayInstance.date?.format('dd.MM.')}</td>
-						<td>${fieldValue(bean: dayInstance, field: "description")}</td>
+						<td class="dayDescription">${fieldValue(bean: dayInstance, field: "description")}</td>
 						<td><g:link class="edit" action="edit" id="${dayInstance.id}" >${message(code: 'default.button.edit.label')}</g:link></td>
 						<td><g:link class="managestages" action="manageStages" id="${dayInstance.id}" >${message(code: 'manage.stages.label')}</g:link></td>
 					</tr>

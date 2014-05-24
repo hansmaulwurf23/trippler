@@ -12,11 +12,13 @@ import org.springframework.security.core.context.SecurityContextHolder as SCH
 import org.springframework.security.web.WebAttributes
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 
+import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
+
 class LoginController {
 
 	static navigation = [
 		order:1,
-		visible: { org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils.ifNotGranted('ROLE_ADMIN, ROLE_USER') },
+		isVisible: { !springSecurityService.isLoggedIn() },
 		title:'Login'
 	]
 	

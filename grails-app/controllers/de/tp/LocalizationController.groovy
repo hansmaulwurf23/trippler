@@ -2,8 +2,6 @@ package de.tp
 
 import grails.plugins.springsecurity.Secured
 
-import java.lang.invoke.MethodHandleImpl.BindCaller.T
-
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 import org.grails.plugins.localization.*
 

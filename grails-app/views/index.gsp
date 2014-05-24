@@ -9,8 +9,6 @@
 	<div id="page-body" role="main">
 		<h1>Welcome to Trippler&trade;</h1>
 		
-		${org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils.ifAnyGranted('ROLE_ADMIN, ROLE_USER')}
-		
 		<div id="weathers">
 		<div style="float:left">
 			<div style="width: 220px; height: 150px;">

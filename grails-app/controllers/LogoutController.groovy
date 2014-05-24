@@ -5,10 +5,15 @@ class LogoutController {
 	
 	static navigation = [
 		order:9000,
-		visible: { org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils.ifAnyGranted('ROLE_ADMIN, ROLE_USER') },
+		isVisible: { springSecurityService.isLoggedIn() },
 		title:'Logout'
 	]
 
+	/**
+	 * Dependency injection for the springSecurityService.
+	 */
+	def springSecurityService
+	
 	/**
 	 * Index action. Redirects to the Spring security logout uri.
 	 */
