@@ -154,7 +154,6 @@ grails.plugins.springsecurity.userLookup.userDomainClassName = 'de.tp.sec.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'de.tp.sec.UserRole'
 grails.plugins.springsecurity.authority.className = 'de.tp.sec.Role'
 
-<<<<<<< Updated upstream
 grails.plugins.springsecurity.useSecurityEventListener = true
 grails.plugins.springsecurity.onAuthenticationSuccessEvent = { e, appCtx ->
 	def u = de.tp.sec.User.findByUsername(e.authentication.name)
@@ -170,6 +169,3 @@ grails.plugins.springsecurity.onAuthenticationSuccessEvent = { e, appCtx ->
 }
 
 securityConfig.successHandler.defaultTargetUrl = '/smartPlan'
-=======
-securityConfig.successHandler.defaultTargetUrl = '/smartPlan'
->>>>>>> Stashed changes
