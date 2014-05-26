@@ -7,7 +7,7 @@ class DateTimeService {
 		def resultMap = [:]
 		
 		if (days) {
-			long currentWeek = 0
+			long currentWeek = days[0].date?.format('w') as long
 			days.each {
 				if (!resultMap.containsKey(currentWeek)) resultMap[(currentWeek)] = []
 							
