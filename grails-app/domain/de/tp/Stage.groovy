@@ -10,6 +10,8 @@ class Stage {
 	String shortdesc
 	long staySeconds
 	Long distance
+	
+	Variant variant
 
     static constraints = {
 		name nullable:false, blank:false
@@ -34,6 +36,14 @@ class Stage {
 	
 	String toString() {
 		name
+	}
+	
+	def clone() {
+		Stage s = new Stage()
+		['address', 'name', 'notes', 'shortdesc', 'staySeconds'].each { attr ->
+			s[attr] = this[attr]
+		}
+		return s
 	}
 	
 }

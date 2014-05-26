@@ -26,6 +26,26 @@ span.distanceinfo {
 	color: #666666;
 }
 
+div#holidayVariantSwitcher {
+	position: absolute;
+	top: -10px;
+	margin-left: 25px;
+	background-color: #000;
+	color: #FFF;
+	padding: 10px;
+	padding-bottom: 5px;
+	border-radius:10px;
+}
+
+div#holidayVariantSwitcher a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+div#holidayVariantSwitcher a:hover {
+	text-decoration: underline;
+}
+
 /* FONT STACK */
 body,
 input, select, textarea {

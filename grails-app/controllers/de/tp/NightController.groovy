@@ -9,7 +9,7 @@ import de.tp.Night;
 @Secured(['ROLE_ADMIN'])
 class NightController {
 
-    static scaffold = true
+	static scaffold = true
 	
 	def exportService
 	
@@ -29,14 +29,27 @@ class NightController {
 		
 		if (params?.format && params.format != "html") {
 			params.max = null
-			response.contentType = grailsApplication.config.grails.mime.types[params.format] 
+			response.contentType = grailsApplication.config.grails.mime.types[params.format]
 			response.setHeader("Content-disposition", "attachment; filename=nights.${params.extension}")
 
-			exportService.export(params.format, response.outputStream, Night.list(params), [:], [:])
+			exportService.export(params.format, response.outputStream, Night.findAllByVariant(session.variant, params), [:], [:])
 		}
 		
-		[nightInstanceList: Night.list(params), nightInstanceTotal: Night.count()]
+		[nightInstanceList: Night.findAllByVariant(session.variant, params), nightInstanceTotal: Night.countByVariant(session.variant)]
 	}
+	
+	def save() {
+		def nightInstance = new Night(params)
+		nightInstance.variant = session.variant
+		if (!nightInstance.save(flush: true)) {
+			render(view: "create", model: [nightInstance: nightInstance])
+			return
+		}
+
+		flash.message = message(code: 'default.created.message', args: [message(code: 'night.label', default: 'Night'), nightInstance.id])
+		redirect(action: "show", id: nightInstance.id)
+	}
+
 	
 	def bla() {
 		Date d = new Date(114, 7, 19, 0, 0)
@@ -49,3 +62,6 @@ class NightController {
 		redirect(action:'list')
 	}
 }
+
+
+    

@@ -11,6 +11,8 @@ class Night {
 	Long durationFromLastStage
 	Date arrivalTime
 	
+	Variant variant
+	
     static constraints = {
 		midnight()
 		accomodation()
@@ -28,5 +30,13 @@ class Night {
 	
 	String toString() {
 		midnight ? midnight.format("dd.MM.yyyy") : '?'
+	}
+	
+	def clone() {
+		Night n = new Night()
+		['midnight'].each { attr ->
+			n[attr] = this[attr]
+		}
+		return n
 	}
 }

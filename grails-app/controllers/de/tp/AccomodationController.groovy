@@ -15,7 +15,7 @@ class AccomodationController {
 		
 	]
 	
-    static scaffold = true
+	static scaffold = true
 	
 	def exportpoi() {
 		def nights = Night.executeQuery("from Night n inner join fetch n.accomodation")
@@ -37,6 +37,22 @@ class AccomodationController {
 		[result:sb.toString()]
 	}
 	
+	def save() {
+		def accomodationInstance = new Accomodation(params)
+		accomodationInstance.holiday = session.holiday
+		if (!accomodationInstance.save(flush: true)) {
+			render(view: "create", model: [accomodationInstance: accomodationInstance])
+			return
+		}
+
+		flash.message = message(code: 'default.created.message', args: [message(code: 'accomodation.label', default: 'Accomodation'), accomodationInstance.id])
+		redirect(action: "show", id: accomodationInstance.id)
+	}
+	
+	def list() {
+		[accomodationInstanceList: Accomodation.findAllByHoliday(session.holiday, params), accomodationInstanceTotal: Accomodation.countByHoliday(session.holiday)]
+	}
+	
 	def formatPOI(a) {
 		//return "${a.address.longitude}, ${a.address.latitude}, ${a.address.street} ${a.address.zip} ${a.address.city}, ${a.name},,,,,${a.cancellationContact?:''}"
 		return "${a.address.longitude}, ${a.address.latitude}, ${a.name}, -, ${a.address.street}, ${a.address.city}, ${a.address.state}, ${a.address.zip}, ${a.address.country}, ${a.cancellationContact?:''}"
@@ -47,3 +63,5 @@ class AccomodationController {
 		return "${a.address.longitude}, ${a.address.latitude}, ${a.name}, -, ${a.address.street}, ${a.address.city}, ${a.address.state}, ${a.address.zip}, ${a.address.country}"
 	}
 }
+
+    
