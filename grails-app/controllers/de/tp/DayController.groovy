@@ -1,3 +1,4 @@
+
 package de.tp
 
 import grails.converters.JSON
@@ -14,7 +15,7 @@ import de.tp.Stage;
 @Secured(['ROLE_ADMIN'])
 class DayController {
 
-    static scaffold = true
+	static scaffold = true
 	
 	static navigation = [
 		order:10,
@@ -78,7 +79,22 @@ class DayController {
 		
 		render result as JSON
 	}
+
 	
+	def save() {
+		def dayInstance = new Day(params)
+		dayInstance.variant = session.variant
+		if (!dayInstance.save(flush: true)) {
+			render(view: "create", model: [dayInstance: dayInstance])
+			return
+		}
+
+		flash.message = message(code: 'default.created.message', args: [message(code: 'day.label', default: 'Day'), dayInstance.id])
+		redirect(action: "show", id: dayInstance.id)
+	}
+
+
+		
 	def fetchsundata() {
 		[days : Day.listOrderByDate()]
 	}
@@ -105,6 +121,8 @@ class DayController {
 			params.sort = 'date'
 		}
 		[dayInstanceList: Day.list(params), dayInstanceTotal: Day.count()]*/
-		[dayInstanceList: Day.list(sort:'date')]
+		[dayInstanceList: Day.findAllByVariant(session.variant, [sort:'date'])]
 	}
 }
+
+ 

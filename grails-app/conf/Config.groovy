@@ -72,8 +72,7 @@ de.tp.defaultDateFormat="dd.MM.yyyy"
 environments {
     development {
         grails.logging.jul.usebridge = true
-        grails.config.locations = ["file:${userHome}/.grails/trippler-config.groovy"]
-		grails.config.locations = ["file:/var/opt/trippler/trippler-config.groovy"]
+        grails.config.locations = ["file:${userHome}/.grails/trippler-config.groovy", "file:/var/opt/trippler/trippler-config.groovy"]
     }
     production {
         grails.logging.jul.usebridge = false
@@ -154,3 +153,17 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'de.tp.sec.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'de.tp.sec.UserRole'
 grails.plugins.springsecurity.authority.className = 'de.tp.sec.Role'
+
+grails.plugins.springsecurity.useSecurityEventListener = true
+grails.plugins.springsecurity.onAuthenticationSuccessEvent = { e, appCtx ->
+	def u = de.tp.sec.User.findByUsername(e.authentication.name)
+	def us = de.tp.UserSetting.get(u.id)
+	if (us && us.defaultVariant) {
+		org.springframework.web.context.request.RequestContextHolder.currentRequestAttributes().session['variant'] = us.defaultVariant
+		org.springframework.web.context.request.RequestContextHolder.currentRequestAttributes().session['holiday'] = us.defaultVariant.holiday
+	} else {
+		def variant = de.tp.Variant.first()
+		org.springframework.web.context.request.RequestContextHolder.currentRequestAttributes().session['variant'] = variant
+		org.springframework.web.context.request.RequestContextHolder.currentRequestAttributes().session['holiday'] = variant.holiday
+	}
+}

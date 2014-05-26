@@ -16,6 +16,8 @@ class Accomodation {
 	Boolean wifi
 	Boolean parking
 	
+	Holiday holiday
+	
     static constraints = {
 		name()
 		price()

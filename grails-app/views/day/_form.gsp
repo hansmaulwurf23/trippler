@@ -1,13 +1,13 @@
 <%@ page import="de.tp.Day" %>
 
-
+<r:require modules="datePickers" />
 
 <div class="fieldcontain ${hasErrors(bean: dayInstance, field: 'date', 'error')} required">
 	<label for="date">
 		<g:message code="day.date.label" default="Date" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="date" precision="minute"  value="${dayInstance?.date}"  />
+	<tp:datePicker name="date" precision="minute"  value="${dayInstance?.date}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: dayInstance, field: 'description', 'error')} ">

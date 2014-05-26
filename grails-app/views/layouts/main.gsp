@@ -30,11 +30,15 @@
 		
 		<div id="grailsLogo" role="banner">
 			<g:img dir="images" file="grails_logo_${(new Random()).nextInt(9)}.png" />
-<%--			<img src="${resource(dir: 'images', file: 'grails_logo_${(new Random()).nextInt(2)}.png')}" alt="Grails"/>--%>
 		</div>
+		<sec:ifLoggedIn>
+			<div id="holidayVariantSwitcher">
+				<g:link controller="holiday" action="show" id="${session.holiday.id}">${session.holiday}</g:link> > 
+				<g:link controller="variant" action="switchVariant" id="${session.variant.id}">${session.variant}</g:link>
+			</div>
+		</sec:ifLoggedIn>
 		<div id="menu">
 			<nav:render/>
-<%--			<div id="spinner" class="spinner" style="display: none;" ><g:message code="spinner.alt" default="Loading&hellip;"/></div>--%>
     	</div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>

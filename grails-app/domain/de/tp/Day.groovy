@@ -6,6 +6,8 @@ class Day {
 	String description
 	Date sunrise
 	Date sunset
+	
+	Variant variant
 		
 	static mapping = {
 		date column:'day', type:'timestamp'
@@ -40,6 +42,12 @@ class Day {
 		return description
 	}
 
-	
+	def clone() {
+		Day d = new Day()
+		['date', 'description', 'sunrise', 'sunset'].each { attr ->
+			d[attr] = this[attr]
+		}
+		return d
+	}
 }
 

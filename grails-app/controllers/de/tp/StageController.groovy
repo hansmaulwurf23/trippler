@@ -1,3 +1,4 @@
+
 package de.tp
 
 import grails.converters.JSON
@@ -17,7 +18,7 @@ class StageController {
 		path:'stage'
 	]
 	
-    static scaffold = true
+	static scaffold = true
 	
 	def search() {
 		def found = Stage.search("*${params.term}*", [escape: false,  result: 'every'])
@@ -29,4 +30,22 @@ class StageController {
 		
 		render result as JSON
 	}
+	
+	def list() {
+		[stageInstanceList: Stage.findAllByVariant(session.variant, params), stageInstanceTotal: Stage.countByVariant(session.variant)]
+	}
+	
+	def save() {
+		def stageInstance = new Stage(params)
+		stageInstance.variant = session.variant
+		if (!stageInstance.save(flush: true)) {
+			render(view: "create", model: [stageInstance: stageInstance])
+			return
+		}
+
+		flash.message = message(code: 'default.created.message', args: [message(code: 'stage.label', default: 'Stage'), stageInstance.id])
+		redirect(action: "show", id: stageInstance.id)
+	}
 }
+
+    
