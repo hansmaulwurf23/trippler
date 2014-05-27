@@ -17,8 +17,12 @@ class SmartPlanController {
 	
 	def dateTimeService
 	
+	def index() {
+		redirect(action:'list')
+	}
+	
 	def list() {
-		def dayInstanceList = Day.list(sort:'date')
+		def dayInstanceList = Day.findAllByVariant(session.variant, [sort:'date'])
 		def weekMap = dateTimeService.splitToWeekMap(dayInstanceList)
 		
 		[
