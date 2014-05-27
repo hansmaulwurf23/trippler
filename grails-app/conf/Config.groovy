@@ -167,3 +167,5 @@ grails.plugins.springsecurity.onAuthenticationSuccessEvent = { e, appCtx ->
 		org.springframework.web.context.request.RequestContextHolder.currentRequestAttributes().session['holiday'] = variant.holiday
 	}
 }
+
+securityConfig.successHandler.defaultTargetUrl = '/smartPlan'

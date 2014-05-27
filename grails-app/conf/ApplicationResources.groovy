@@ -29,6 +29,12 @@ modules = {
 		resource url:'js/select2/integrate.js', disposition:'head'
 	}
 	
+	'jquery-ui-editable' {
+		dependsOn 'jquery-ui'
+		resource url:'js/jquery/jqueryui-editable.min.js', disposition:'head'
+		resource url:'css/jqueryui/jqueryui-editable.css', disposition:'head'
+	}
+	
 	datePickers {
 		resource url:'js/datepickers.js'
 		dependsOn 'jquery-ui'

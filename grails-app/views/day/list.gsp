@@ -84,12 +84,14 @@
 						<g:set var="night" value="${dayInstance.dawnNight}" />
 						<td><g:img dir="/images/tango/22x22/" file="weather-few-clouds.png" /></td>
 						<td style="text-align: center;">${dayInstance.date?.format('HH:mm')}</td>
+						
 						<g:if test="${night?.accomodation}">
 							<td><g:link controller="night" action="show" id="${night?.id}">${night?.accomodation}</g:link></td>
 						</g:if>
 						<g:else>
 							<td><g:link controller="night" action="show" id="${night?.id}">${night}</g:link></td>
 						</g:else>
+						
 						<td><tp:yesno value="${night?.booked}" /></td>
 						<td><tp:yesno value="${night?.paid}" /></td>
 					</tr>
@@ -98,7 +100,7 @@
 					<tr class="hidden stagerow ${(i % 2) == 0 ? 'even' : 'odd'}" dayid="${dayInstance.id}">
 						<td></td>
 						<td style="text-align: center;">${s.time?.format("HH:mm")}</td>
-						<td colspan="1">${s}</td>
+						<td colspan="1"><g:link controller="stage" action="edit" id="${s.id}">${s}</g:link></td>
 						<td><tp:formatDistance value="${s.distance}" /></td>
 						<td><tp:formatDuration value="${s.staySeconds}" /></td>
 					</tr>
